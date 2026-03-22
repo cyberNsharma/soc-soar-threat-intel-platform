@@ -1,0 +1,17 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+    - /var/log/*.log
+
+filebeat.modules:
+- module: system
+  syslog:
+    enabled: true
+  auth:
+    enabled: true
+
+output.elasticsearch:
+  hosts: ["http://localhost:9200"]
+  username: "elastic"
+  password: "changeme"
