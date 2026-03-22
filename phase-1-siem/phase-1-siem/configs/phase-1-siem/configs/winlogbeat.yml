@@ -1,0 +1,13 @@
+winlogbeat.event_logs:
+  - name: Security
+    ignore_older: 72h
+  - name: System
+  - name: Application
+
+output.elasticsearch:
+  hosts: ["http://localhost:9200"]
+  username: "elastic"
+  password: "changeme"
+
+setup.kibana:
+  host: "http://localhost:5601"
